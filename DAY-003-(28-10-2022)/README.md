@@ -1,2 +1,2 @@
 # very-basic-resume
-#https://github.com/shi5amraj/very-basic-resume.git
+## link-https://shi5amraj.github.io/very-basic-resume/
