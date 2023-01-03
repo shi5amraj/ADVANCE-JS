@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Advance JS Tutorial</title>
+    <style>
+        .myclass
+        {
+            color: blueviolet;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="name">My Name is Shivam</h1>
+    <h2 class="h2class">h2 tag</h2>
+    <h2 class="h2class">h2 tag</h2>
+    <h2 class="h2class">h2 tag</h2>
+    <h2 class="h2class">h2 tag</h2>
+    <h2 class="h2class">h2 tag</h2>
+    <h2 class="h2class">h2 tag</h2>
+    <h1 id="changeStyle">This H1 Tag will change its style when we  click add or remove</h1>
+    <button onclick="add()">Add</button>
+    <button onclick="remove()">Remove</button>
+
+</body>
+
+<script>
+   const h1val=document.getElementById("name").innerText;
+   console.log(h1val)
+   const newName=document.getElementById("name");
+   console.log(newName);
+   newName.innerText="No!! My name is only shivam"
+   newName.classList.add("h1class");
+   console.log(newName);
+   const temp=document.getElementsByClassName("h2class");
+   console.log(temp);
+   var convertIntoArray=[...temp]
+   convertIntoArray.map((ele)=>
+   {
+    ele.setAttribute("label","abcz")
+    console.log(ele)
+   })
+
+
+
+</script>
+
+
+<script>
+
+function add() {
+    var temp=document.getElementById("changeStyle")
+    temp.classList.add("myclass")
+}
+function remove()
+{
+    var temp=document.getElementById("changeStyle")
+    temp.classList.remove("myclass")
+
+}
+
+
+
+</script>
+</html>

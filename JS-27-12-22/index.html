@@ -1,0 +1,30 @@
+<div class="circle"></div>
+    <br>
+    <br>
+    <button id="on" onclick="On()"> Turn On </button>
+    <button id="off" onclick="Off()"> Turn Off</button>
+        
+
+    <style>
+        .circle {
+          width: 200px;
+          height: 200px;
+          border-radius: 50%;
+          border: 2px solid black
+        } 
+
+    </style>
+
+    <script>
+        function On() {
+            var on = document.getElementsByClassName("circle");
+            console.log(on);
+            on[0].setAttribute("style", "background-color: yellow;")
+        }
+
+        function Off() {
+            var off = document.getElementsByClassName("circle");
+            console.log(off);
+            off[0].setAttribute("style", "background-color: white;")
+        }
+    </script>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <div class="main">
+    <div class="mainContainer">
+      <div class="caluclationDiv">
+        <div class="calculateArea" id="calculateArea"></div>
+        <div class="topOperator" onclick="clearData()"><b>C</b></div>
+      </div>
+      <div class="contentDiv">
+        <div class="child">
+            <div class="operand" onclick="getvalue(event)">1</div>
+            <div class="operand" onclick="getvalue(event)">2</div>
+            <div class="operand" onclick="getvalue(event)">3</div>
+            <div class="operator" onclick="getvalue(event)">/</div>
+        </div>
+        <div class="child">
+            <div class="operand" onclick="getvalue(event)">4</div>
+            <div class="operand" onclick="getvalue(event)">5</div>
+            <div class="operand" onclick="getvalue(event)">6</div>
+            <div class="operator" onclick="getvalue(event)">-</div>
+        </div>
+        <div class="child">
+            <div class="operand" onclick="getvalue(event)">7</div>
+            <div class="operand" onclick="getvalue(event)">8</div>
+            <div class="operand" onclick="getvalue(event)">9</div>
+            <div class="operator" onclick="getvalue(event)">+</div>
+        </div>
+        <div class="child">
+            <div class="operand" onclick="getvalue(event)">.</div>
+            <div class="operand" onclick="getvalue(event)">0</div>
+            <div class="operandEqual" onclick="total(event)">=</div>
+            <div class="operator" onclick="getvalue(event)">*</div>
+        </div>
+      </div>
+    </div>
+
+   </div> 
+</body>
+
+<script>
+  var currentVal
+  function getvalue(event)
+  {
+    const display=document.getElementById("calculateArea")
+    currentVal=event.target.innerText;
+
+    display.innerText +=currentVal;
+    currentVal=display.innerText
+    //console.log(currentVal)
+
+  }
+  function total(event)
+  {
+    const display=document.getElementById("calculateArea")
+    display.innerText=""
+    display.innerText=eval(currentVal)
+  }
+  function clearData(){
+    const display=document.getElementById("calculateArea")
+    display.innerText=""
+
+  }
+
+
+</script>
+</html>

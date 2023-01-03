@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance JS Assignment</title>
+  <style>
+   *
+   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body
+   {
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid grey;
+    display: flex;
+    justify-content: center;
+   align-items: center;
+   }
+   .mainDiv
+   {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+   }
+   ul
+   {
+    list-style: none;
+   }
+   ul li
+   { width: 110px;
+    padding: 5px;
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .even
+   {
+background-color: limegreen;
+color: white;
+   }
+   .first
+   {
+    background-color: blue;
+    color: white;
+   }
+   .nineth
+   {
+    background-color: green;
+    color: white;
+   }
+   .seventeenth
+   {
+    background-color: palevioletred;
+    color: white;
+   }
+
+  </style>
+</head>
+<body>
+    
+    <div class="mainDiv">
+     <ul class="uls">
+       <li  class="first">1st Child</li>
+       <li class="even">2nd Child</li>
+       <li class="">3rd Child</li>
+       <li class="even">4th Child</li>
+       <li class="">5th Child</li>
+       <li class="even">6th Child</li>
+       <li class="">7th Child</li>
+       <li class="even">8th Child</li>
+       <li class="nineth">9th Child</li>
+       <li class="even">10th Child</li>
+       <li class="">11th Child</li>
+       <li class="even">12th Child</li>
+       <li class="">13th Child</li>
+       <li class="even">14th Child</li>
+       <li class="">15th Child</li>
+       <li class="even">16th Child</li>
+       <li class="seventeenth">17th Child</li>
+
+     </ul>
+
+    </div>
+
+</body>
+<script>
+    const uls=document.getElementsByClassName("uls")
+    
+    var ularr=[...uls]
+    console.log(ularr)
+    ularr.map( (element)=>
+    {
+        console.log(element)
+    })
+</script>
+</html>

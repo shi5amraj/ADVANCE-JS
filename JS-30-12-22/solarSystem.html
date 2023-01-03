@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Mass Calculater</title>
+
+    <style>
+        *
+        {
+            color: white;
+        }
+        body
+        {
+          background-color: black;
+        }
+        div
+        {
+            height: 20vh;
+            width: 50vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: auto;
+
+        }
+        .planetContainer , .massContainer
+        {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        input
+        {
+            padding: 0.5rem;
+            width: 80%;
+            color: black;
+
+        }
+        button
+        {
+            margin: auto;
+            padding: 0.5rem,1rem;
+            outline: none;
+            border: none;
+            background-color: white;
+            color: rgb(6, 6, 6);
+        }
+        .clickbtn
+        {
+            height: fit-content;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        select
+        {
+            padding: 0.5rem;
+            width: 80%;
+            color: black;
+        }
+       select option
+       {
+        color: black;
+       }
+       .weightAndImgContainer{
+    flex-direction: column;
+    border: 2px solid red;
+    height: 60vh;
+    width: 50%;
+  }
+  
+  .weightAndImgContainer img{
+    width: 50%;
+    
+  }
+
+
+
+    </style>
+</head>
+<body>
+    
+    <div class="massContainer">
+        <p>Enter Your Mass:</p>
+        <input type="text" name="mass" id="mass">
+    </div>
+    <div class="planetContainer">
+        <p>Select Planet:</p>
+        <select name="planetSelect" id="planetSelect">
+            <option value="0" >--Select--</option>
+        </select>
+
+    </div>
+    <div class="clickdiv" >
+    <button onclick="calculateWeight()" class="clickbtn" id="clickbtn" > Calculate Weight</button>
+    </div>
+
+    <div class="weightAndImgContainer">
+        <h1 class="h1" id="h1"></h1>
+        <img src="" alt="" id="img">
+    </div>
+
+
+</body>
+
+<script>
+const planets=[
+        { planetName: "Sun", gravity: 27.9, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Moon", gravity: 0.1655, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Mercury", gravity: 0.377, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Venus", gravity: 0.9032, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Earth", gravity: 1, image: "https://cdn.pixabay.com/photo/2011/12/13/14/31/earth-11015__340.jpg" },
+        { planetName: "Mars", gravity: 0.3895, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Jupiter", gravity: 2.640, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Saturn", gravity: 1.139, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Uranus", gravity: 0.917, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+        { planetName: "Neptune", gravity: 1.148, image: "https://spaceplace.nasa.gov/gallery-sun/en/solar-flare.en.jpg" },
+]
+planets.map((ele)=>
+{
+    const option=document.createElement("option")
+    option.innerHTML=ele.planetName
+    option.value=ele.gravity
+    option.setAttribute("imgSrc",ele.image)
+    const selectoption=document.getElementById("planetSelect")
+    selectoption.appendChild(option)
+
+
+})
+
+function calculateWeight()
+{
+   var mass= +document.getElementById("mass").value
+   console.log(mass)
+   const select=document.getElementById("planetSelect")
+   const selectedIndex=select.selectedIndex
+  const selectedOptionValue= +select.options[selectedIndex].value
+  console.log(selectedOptionValue)
+ var weight= Math.abs( mass*selectedOptionValue)
+ var h1=document.getElementById("h1")
+  if(mass=="")
+  {
+   h1.innerText="Please Enter Your Mass in Kg"
+  }
+  else if(mass<0)
+  {
+    h1.innerText="Please Enter Mass Greater Than 0"
+  }
+  else if(selectedOptionValue==0)
+  {
+    h1.innerText="Please Select one of the Planet for calculation"
+  }
+
+ else{
+ h1.innerText=weight+" kg";
+ var img=document.getElementById("img")
+
+ var imgSrc=select.options[selectedIndex].getAttribute("imgSrc")
+ img.src=imgSrc
+}
+
+}
+
+
+</script>
+</html>
