@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVANCE JS ASSIGNMENT 01</title>
+
+</head>
+<body>
+    
+    <div class="mainDiv">
+        <input type="text" name="name" id="nameid" onchange="ok()">
+        <p class="wrote" id="wroteId" ></p>
+    </div>
+</body>
+<script>
+    function ok()
+    {
+var nameId=document.getElementById("nameid")
+var nameVal=nameId.value
+console.log(nameVal)
+var pcontrol=document.getElementsByClassName("wrote")
+pcontrol[0].innerHTML=nameVal
+
+    }
+
+</script>
+
+</html>
