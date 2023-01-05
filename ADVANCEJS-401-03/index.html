@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Slider/Crousel</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
     
         *
@@ -28,6 +28,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            position: relative;
            
         }
         .imgDiv
@@ -44,27 +45,41 @@
          display: flex;
          justify-content: center;
          align-items: center;
+         position: relative;
+         left: 8%;
+         top: 0%;
        
         }
         .rightButton
         {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+         display: flex;
+        justify-content: center;
+        align-items: center;
         border: none;
          width: 80px;
          height: 40px;
+         position: relative;
+         right: 8%;
+         top: 0%;
          
+        }
+        i
+        {
+            color: orange;
+            
+            font-size: 3rem;
         }
     </style>
 </head>
 <body>
     <div class="mainDiv">
-        <div class="leftButton"> <button onclick="prevImg()" >Previous</button></div>
+        <!-- <div class="leftButton"> <button onclick="prevImg()" >Previous</button></div> -->
+        <div class="leftButton"> <i onclick="prevImg()" class="fa fa-caret-left" aria-hidden="true"></i></div>
        
         <div class="imgDiv"><img src="https://picsum.photos/id/12/200/300" alt="img" width="500px" height="300px"  id="imgID"/></div>
    
-        <div class="rightButton"> <button onclick="nextImg()" >Next</i></button></div>
+        <!-- <div class="rightButton"> <button onclick="nextImg()" >Next</i></button></div> -->
+        <div class="rightButton"> <i  onclick="nextImg()" class="fa fa-caret-right" aria-hidden="true"></i></div>
 </div>
     
 
