@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider/Crousel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+    <style>
+    
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+         {  height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+         }
+        .mainDiv
+        {   
+            width: 600px;
+            height: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+           
+        }
+        .imgDiv
+        {
+            width:500px ;
+            height:300px;
+           
+        }
+        .leftButton
+        {
+         border: none;
+         width: 80px;
+         height: 40px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+       
+        }
+        .rightButton
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        border: none;
+         width: 80px;
+         height: 40px;
+         
+        }
+    </style>
+</head>
+<body>
+    <div class="mainDiv">
+        <div class="leftButton"> <button onclick="prevImg()" >Previous</button></div>
+       
+        <div class="imgDiv"><img src="https://picsum.photos/id/12/200/300" alt="img" width="500px" height="300px"  id="imgID"/></div>
+   
+        <div class="rightButton"> <button onclick="nextImg()" >Next</i></button></div>
+</div>
+    
+
+</body>
+<script src="index.js"></script>
+
+<script>
+var img=document.getElementById("imgID")
+ 
+ var imgArr=[];
+ imgArr[0]="https://picsum.photos/id/10/200/300";
+ imgArr[1]="https://picsum.photos/id/11/200/300";
+ imgArr[2]="https://picsum.photos/id/12/200/300";
+   var i=-1;//here i am initialising i with -1 because before image showing we have to increament it and if we want to start showing from 0 index
+
+   setInterval("nextImg()",3000)
+
+    function nextImg()
+    {
+     
+   if(i<imgArr.length-1)
+   {
+
+    i++
+   }
+   else
+   {
+    i=0
+   }
+   //console.log(i)
+   img.src=imgArr[i]
+}
+
+function prevImg()
+  {
+    if( i>0 && i<imgArr.length)
+    {
+       i--
+    }
+    else
+    {
+        i=imgArr.length-1
+    }
+    //console.log(i)
+   img.src=imgArr[i]
+  }
+
+
+</script>
+</html>
