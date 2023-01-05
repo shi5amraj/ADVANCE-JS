@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+        width: 100vw;
+        height: 100vh;
+        border: 2px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mainDiv
+    {
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .geekh1
+    {
+        font-weight: bolder;
+        color: rgb(3, 112, 3);
+    }
+    .h2class
+    {
+        font-weight: bolder;
+        color: rgb(3, 112, 3);  
+    }
+   </style>
+</head>
+<body>
+    
+    <div class="mainDiv" id="mainDivId">
+       <h1 class="geekh1">Geekster</h1>
+       <p>click on the button to add image element</p>
+       <button onclick="addimg()">button</button>
+
+    </div>
+</body>
+<script>
+    function addimg()
+    {
+      var h2element=document.createElement("h2")
+      h2element.setAttribute("class","h2class")
+      h2element.innerText="Image Element Added"
+      var mainDivId=document.getElementById("mainDivId")
+      mainDivId.appendChild(h2element)
+     
+      var img = document.createElement('img');
+     
+     img.setAttribute("class","imge")
+     img.src="geekster_logo.svg"
+     mainDivId.appendChild(img)
+     console.log(img)
+      
+    }
+</script>
+</html>
