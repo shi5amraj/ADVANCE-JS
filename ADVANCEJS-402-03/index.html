@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+  <Style>
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body
+    {
+        width: 100vw;
+        height: 100vh;
+        border: 2px solid black;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .mainContainer
+    {
+        width: 50%;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+       
+
+    }
+    .heading
+    {
+        font-size: xx-large;
+        font-weight: bolder;
+    }
+    .inputDiv
+    {
+        width: 70%;
+        height: 20%;
+      
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .label
+    {
+        font-size: medium;
+        font-weight: bold;
+    }
+    .textinput
+    {
+        width:50% ;
+        height: 25px;
+        border-radius: 10px;
+        box-shadow: 6px 4px 5px #888888;
+        border: 2px solid gray;
+        padding-left: 5%;
+        font-weight: bold;
+    }
+    .addbtn
+    {
+        width: 20%;
+        height: 25px;
+        border-radius: 8px;
+        box-shadow: 4px 3px 2px limegreen;
+        background-color: rgb(33, 222, 33);
+        border: none;
+        font-weight: bold;
+
+    }
+    .listDiv
+    {
+        width: 80%;
+        height: 60%;
+        
+        display: flex;
+       
+        align-items: center;
+        justify-content: center;
+    }
+    .itemlist
+    {
+        width: 80%;
+        height: auto;
+
+
+    }
+    .buttonItemList
+    {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center ;
+        align-items: center;
+    }
+
+
+  </Style>
+</head>
+<body>
+    <div class="mainContainer">
+
+   <p class="heading">My Shopping List</p>
+   <div class="inputDiv">
+    <label for="item" class="label">Enter a new Item :</label>
+    <input type="text" name="item" id="items" class="textinput">
+    <button class="addbtn" onclick="addItem()">Add item</button>
+   </div>
+   <div class="listDiv">
+   <ul class="itemlist" id="itemlist"></ul>
+
+
+   </div>
+
+    </div>
+</body>
+
+<script>
+
+    var i=1
+   
+    function addItem()
+    {
+        console.log("function clicked")
+        var inputData=document.getElementById("items").value
+        
+
+        let liItem=document.createElement("li")
+        liItem.innerText=inputData
+        liItem.style.fontWeight="bold"
+        liItem.style.fontSize="x-large"
+
+        
+
+        let button=document.createElement("button")
+        button.innerText="Delete"
+        button.style.backgroundColor="grey"
+        button.style.width="50%"
+        button.style.borderRadius="10px"
+       let div=document.createElement("div")
+       div.setAttribute("class","buttonItemList")
+       div.setAttribute("class",`item${i}`)
+       div.style.display="flex"
+       div.style.justifyContent="space-between"
+       div.style.width="50%"
+       div.style.marginBottom="10px"
+
+       div.appendChild(liItem)
+       div.appendChild(button)
+       button.addEventListener("click",()=>
+       {
+        div.remove()
+
+       })
+
+       let listtoadd=document.getElementById("itemlist")
+       listtoadd.appendChild(div)
+        i++
+    
+    
+        
+    }
+</script>
+</html>
