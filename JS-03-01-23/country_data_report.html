@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+        width: 100vw;
+        height: 120vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+
+    }
+    .mainDiv
+    {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .upperDiv
+    {
+        width: 100%;
+        height: 12%;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .upperDivh2
+    {
+        color: orange;
+        font-size: xx-large;
+        
+    }
+    .midDiv
+    {
+        width: 100%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        
+    }
+    .buttonContainer
+    {
+        width: 20%;
+        height: 60%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: none;
+        
+    }
+    .populationButton
+    {
+        height: 60%;
+        width: 30%;
+        border-radius: 10px;
+        background-color: orange;
+    }
+    .languageButton
+    {
+        height: 60%;
+        width: 30%;
+        border-radius: 10px;
+        background-color: orange;
+    }
+    .lowerDiv
+    {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .graph
+    {   width: 60%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+   
+
+</style>
+<body>
+    <div class="mainDiv">
+
+    <div class="upperDiv">
+        <h2  class="upperDivh2">World Country Data</h2>
+        <p id="subheading"></p>
+
+    </div>
+    <div class="midDiv">
+        <div id="buttonContainer" class="buttonContainer">
+            <button id="populationButton" class="populationButton" onclick="buttonOneClicked()">Population</button>
+            <button id="languageButton" class="languageButton" onclick="buttonTwoClicked()">Language</button>
+        </div>
+        
+            <p id="graphTitle">10 most populated countries in world</p>
+        
+    </div>
+
+    <div class="lowerDiv">
+
+       
+            <div id="graph" class="graph">
+
+            </div>
+        
+    </div>
+</div>
+
+</body>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+</html>
