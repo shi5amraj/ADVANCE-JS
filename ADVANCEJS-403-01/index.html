@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>key press event </title>
+    <style>
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body
+        {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mainContainer
+        {
+            width: 40%;
+            height: 40%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            box-shadow: 8px 8px 10px 10px #888888;
+        }
+
+        .topPara
+        {
+            width: 80%;
+            height: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .para
+        {
+            font-size: xx-large;
+            font-weight: bolder;
+        }
+        .text
+        {
+            font-size: xxx-large;
+            font-weight: bolder;
+            color: green;
+            margin-left: 10px;
+        }
+
+        .bottomPara
+        {
+            width: 30%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 4px 4px 4px 4px #888888;
+        }
+       .number
+       {
+        font-size: xxx-large;
+            font-weight: bolder;
+            color: green;
+       }
+
+
+    </style>
+</head>
+<body>
+    <div class="mainContainer"> 
+
+         <div class="topPara">
+            <p class="para" id="para"> Press Any KeyBoard Key </p>
+           <p class="text" id="text"></p>
+        
+        </div>
+
+        <div class="bottomPara">
+           <p class="number" id="number"></p>
+        
+        </div>
+        
+
+    </div>
+    <script>
+
+        
+   document.addEventListener("keypress",(event)=>
+   {  
+      console.log(event)
+      const para=document.getElementById("para").innerText="You have Entered " 
+      const text=document.getElementById("text").innerText=`  ${event.key}`
+      const number=document.getElementById("number").innerText=`  ${event.charCode}`
+   })
+      
+
+    </script>
+</body>
+</html>
