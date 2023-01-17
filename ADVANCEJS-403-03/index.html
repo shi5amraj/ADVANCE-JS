@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+
+    <style>
+    *
+    {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body
+    {
+        width: 100vw;
+        height: 100vh;
+        
+    }
+    .mainContainer
+    {
+        width: 100%;
+        height: 100%;
+        border: 2px solid red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url("./images/capsicum-verities_g.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
+    .chartContainer
+    {
+        width: 21%;
+        height: 80%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        box-shadow: 5px 5px 20px gray;
+        border-radius: 5px;
+    }
+   .content
+   {
+
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+   }
+   .headingDiv
+   {
+   width: 100%;
+   height: 15%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   color: rgb(51, 41, 41);
+   }
+   .para
+   {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    font-weight:bolder;
+    font-size: xx-large;
+    margin-left: 20%;
+   }
+
+   .line
+   {
+    width: 100%;
+    height: 2px;
+    background-color: rgb(206, 203, 203);
+   }
+
+   .amtDiv
+   {
+     width: 100%;
+     height: 50%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     align-items: flex-start;
+     font-weight: bold;
+     color: brown;
+   }
+   .billamount, .billpeople
+   {
+    width: 45%;
+    height: 25px;
+    padding: 10px;
+    border-radius: 5px solid white;
+
+   }
+
+   .select
+   {
+   
+    height: 25px;
+
+   }
+
+   .btn
+   {
+    width: 100%;
+    height:10% ;
+    background-color: brown;
+    color: white;
+   }
+
+  .totalDiv
+  { width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text
+  {
+    font-size: xx-large;
+    color: brown;
+    font-weight: bold;
+  }
+
+
+    </style>
+</head>
+<body>
+
+    <div class="mainContainer">
+        <div class="chartContainer">
+            <div class="content">
+
+            <div class="headingDiv">
+            <p class="para">Charles' Tip Calculator</p>
+            <div class="line"></div>
+        </div>
+            
+            <div class="amtDiv">
+                <p>How much was your bill?</p>
+
+                <div class="billamt">
+                    <label for="billamount">$</label> <input type="text" class="billamount" name="billamount" id="billamount">
+                </div>
+
+                <p>How Was Your Service?</p>
+
+                <select class="select" id="select">
+                    <option value="0">--Choose an option--</option>
+                    <option value="0.3">30%-Outstanding</option>
+                    <option value="0.2">20%-Good</option>
+                    <option value="0.15">15%-It Was Ok</option>
+                    <option value="0.10">10%-Bad</option>
+                    <option value="0.05">5%-Terrible</option>
+        
+                    </select>
+
+                    <p>How Many People Were Sharing the bill?</p>
+
+                    <div class="peopleDiv">
+
+                    <input type="text" name="billpeople" class="billpeople" id="billpeople"> <label for="billpeople">People</label>
+                    </div>
+
+                
+            </div>
+           
+
+            <button onclick="calculate()" class="btn">CALCULATE!</button>
+
+            <p>TIP AMOUNT</p>
+          
+            <div class="totalDiv">
+                <label for="text">$</label><p name="text" class="text" id="text"></p>
+            
+            </div>
+            <p>each</p>
+
+        </div>
+    </div>
+
+
+
+
+    </div>
+    
+</body>
+<script src="index.js"></script>
+
+
+</html>
