@@ -176,12 +176,10 @@ var clearGraph=document.getElementById("graph");
 
      }
 
-     
-     
-
-     
-
-
-
 
  }
+
+window.onload = (event) => {
+    console.log("page is fully loaded");
+    buttonOneClicked()
+  };
