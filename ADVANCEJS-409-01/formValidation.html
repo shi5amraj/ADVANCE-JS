@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+     *
+     {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        
+     }
+
+     body
+     {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+     }
+    .mainContainer
+    {
+
+        width: 40vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+
+        /* border: 2px solid red; */
+    }
+
+    label
+    {
+        font-size: x-large;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+    }
+  .mainContainer input
+  {
+
+    width: 80%;
+    height: 40px;
+    padding: 20px;
+    font-weight: bold;
+    font-size: large;
+    border-radius: 5px;
+    overflow-y: scroll;
+  }
+
+  .mainContainer button
+  {
+    width: 20%;
+    height: 6%;
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    background-color: black;
+    border-radius: 4px;
+    margin-top: 5px;
+  }
+
+  .error
+  {
+    border: 2px solid orange;
+    outline: 2px solid orange;
+  }
+
+  #helperText1,
+  #helperText2,
+  #helperText3,
+  #helperText4,
+  #helperText5,
+  #helperText6
+  { width: 80%;
+    height: auto;
+    color: orange;
+    cursor: not-allowed; 
+    font-weight: bolder; 
+    
+  }
+     
+
+
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+
+     <label for="firstName">First Name</label>
+     <input type="text" name="firstName" id="firstName"  onkeyup="firstnameinputChange()"   placeholder="Enter First Name">
+     <p id="helperText1"></p>
+
+     <label for="lastName">Last Name</label>
+     <input type="text" name="lastName" id="lastName" onkeyup="lastnameinputChange()" placeholder="Enter Last Name">
+     <p id="helperText2"></p>
+
+     <label for="email">Email</label>
+     <input type="text" name="email" id="email" onkeyup="onemailChange()" placeholder="Enter Your Email">
+     <p id="helperText3"></p>
+
+
+     <label for="password">Password</label>
+     <input type="password" name="password" id="password" onkeyup="onpassWordChange()" placeholder="Enter Password">
+     <p id="helperText4"></p>
+
+
+     <label for="telephone">Telephone</label>
+     <input type="text" name="telephone" id="telephone" onkeyup="onphoneChange()" placeholder="Enter Your Contact No">
+     <p id="helperText5"></p>
+
+     <label for="bio">Your bio</label>
+     <input type="text" name="bio" id="bio" onkeyup="onbioChange()" placeholder="Enter Your Bio">
+     <p id="helperText6"></p>
+      <button onclick="collectData()" onmouseup="firstnameinputChange()">Submit</button>
+
+    </div>
+
+    <script>
+    var fname=document.getElementById("firstName")
+    var lname=document.getElementById("lastName")
+    var email=document.getElementById("email")
+    var password=document.getElementById("password")
+    var telephone=document.getElementById("telephone")
+    var bio=document.getElementById("bio")
+    
+
+    const error={
+
+        fname:true,
+        lname:true,
+        email:true,
+        password:true,
+        telephone:true,
+        bio:true
+    }
+
+  function firstnameinputChange()
+  {
+   const helperText1=document.getElementById("helperText1")
+
+   if(fname.value ==="")
+   {
+
+    error.fname=true
+    fname.classList.add("error")
+    helperText1.innerText="Please Enter Your First Name"
+
+
+   }
+   else
+   {
+    error.fname=false
+    fname.classList.remove("error")
+    helperText1.innerText=""
+
+    if(fname.value.length<3){
+
+    error.fname=true
+    fname.classList.add("error")
+    helperText1.innerText="Your First Name must be greater than or equal to  3"
+    }
+    else
+    {
+    error.fname=false
+    fname.classList.remove("error")
+    helperText1.innerText=""
+     
+    if(/^[a-zA-Z]*$/.test(fname.value)==false)
+    {
+    error.fname=true
+    fname.classList.add("error")
+    helperText1.innerText="Your First Name should contain only alphabets"
+    }
+    else
+    {
+    error.fname=false
+    fname.classList.remove("error")
+    helperText1.innerText="" 
+    }
+
+    }
+
+   }
+
+  }
+
+
+
+
+  function lastnameinputChange()
+  {
+   const helperText2=document.getElementById("helperText2")
+
+   if(lname.value ==="")
+   {
+
+    error.lname=true
+    lname.classList.add("error")
+     helperText2.innerText="Please Enter Your Last Name"
+
+
+   }
+   else
+   {
+    error.lname=false
+    lname.classList.remove("error")
+     helperText2.innerText=""
+
+    if(lname.value.length<3){
+
+    error.lname=true
+    lname.classList.add("error")
+     helperText2.innerText="Your Last Name must be greater than or equal to  3"
+    }
+    else
+    {
+        error.lname=false
+    lname.classList.remove("error")
+     helperText2.innerText=""
+     
+    if(/^[a-zA-Z]*$/.test(lname.value)==false)
+    {
+        error.lname=true
+    lname.classList.add("error")
+     helperText2.innerText="Your Last Name should contain only alphabets"
+    }
+    else
+    {
+        error.lname=false
+    lname.classList.remove("error")
+    helperText2.innerText="" 
+    }
+
+    }
+
+   }
+
+  }
+
+  function onemailChange()
+  {
+    
+    if((email.value === "" || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}[a-zA-Z\s])+$/.test(email.value)==false ))
+    {
+
+        error.email=true
+        email.classList.add("error")
+        helperText3.innerText="Please Enter a Valid Email Address"
+    }
+    else
+    {
+        error.email=false
+        email.classList.remove("error")
+        helperText3.innerText=""
+
+
+    }
+
+  }
+
+  function onpassWordChange()
+  {
+    
+    if((password.value === "" || /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(password.value)==false ))
+    {
+
+        error.password=true
+        password.classList.add("error")
+        helperText4.innerText="Please Enter a Valid Password!! a valid password contains at least one letter, one number, and one special character (@, $, !, %, *, #, ?, &) and the password must be at least 8 characters long"
+    }
+    else
+    {
+        error.password=false
+        password.classList.remove("error")
+        helperText4.innerText=""
+
+
+    }
+
+  }
+
+
+  function onphoneChange()
+  {
+   if(telephone.value==="")
+   {
+    error.telephone=true
+    telephone.classList.add("error")
+    helperText5.innerText="Contact no should not be empty"
+   }
+   else
+   {
+    error.telephone=false
+    telephone.classList.remove("error")
+    helperText5.innerHTML=""
+
+    
+     if(/^\d{11}$/.test(telephone.value)===false)
+     {
+       error.telephone=true
+        telephone.classList.add("error")
+        helperText5.innerText="A valid telephone no contains only 11 digit numbers"
+     }
+     else
+     {
+        error.telephone=false
+        telephone.classList.remove("error")
+        helperText5.innerHTML=""
+
+     }
+
+   }
+
+
+  }
+
+
+  function onbioChange()
+  {
+    if(bio.value==="")
+    {
+        error.bio=true
+        bio.classList.add("error")
+        helperText6.innerText="Bio can't be empty"
+
+    }
+    else
+    {
+        error.bio=false
+        bio.classList.remove("error")
+        helperText6.innerText=""  
+
+        if(/^[a-z-_]{8,50}$/.test(bio.value)==false)
+        {
+            error.bio=true
+        bio.classList.add("error")
+        helperText6.innerText="Bio must contain only lowercase letters along with -,_ and its length must be between 8 to 50 character"
+
+        }
+        else{
+            error.bio=false
+        bio.classList.remove("error")
+        helperText6.innerText=""
+        }
+    }
+
+
+
+  }
+
+function collectData()
+{
+    firstnameinputChange()
+    lastnameinputChange()
+    onemailChange()
+    onpassWordChange()
+    onphoneChange()
+    onbioChange()
+
+
+}
+
+
+
+    </script>
+</body>
+</html>
