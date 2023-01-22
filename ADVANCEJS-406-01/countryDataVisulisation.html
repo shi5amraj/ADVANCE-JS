@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country data Visulisation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+
+<style>
+
+*
+{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body
+{
+    
+    /* border: 2px solid red; */
+}
+.mainContainer
+{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.topContainer
+{ 
+  width: 100%;
+  height: 50%;
+ 
+  background: url("./images/alin-andersen-HgZY0oYkpi8-unsplash.jpg") ;
+  background-size: cover;
+  background-position: center ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bolder;
+
+
+}
+.SearchedCountry
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h3class
+{
+    color: indigo;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+.btnDiv
+{
+    height: 20%;
+}
+.btnDiv .startwith
+{
+    width: auto;
+    padding: 10px;
+    font-size: small;
+    background-color: indigo;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+.btnDiv .anyword
+{
+    width: auto;
+    padding: 10px;
+    font-size: small;
+    background-color: rgb(140, 75, 187);
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+.btnDiv button:hover
+{
+    transform: scale(1.1);
+}
+
+.inputDiv
+{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputDiv .inputtext
+{
+    height: 30%;
+    width: 30%;
+    padding: 20px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+.inputDiv .search
+{
+    height: 50%;
+    width:6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   background: transparent;
+   border: none;
+    
+}
+.fa-magnifying-glass {
+    color: white;
+    width: 100% !important;
+    height: 60% !important;
+    font-size: 2em;
+    font-weight: bolder;
+    background-size: 120%;
+}
+
+
+.bottomContainer
+{
+  width: 100%;
+  height: 50%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+
+}
+.card{
+    /* border: 2px solid red; */
+    width: 15vw;
+    padding: 2rem 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px grey;
+}
+
+
+
+</style>
+
+
+<body>
+    
+  <div class="mainContainer">
+   <div class="topContainer">
+     <h1>WORLD COUNTRIES LIST </h1>
+     <p id="noOfCountry" class="noOfCountry">The no of countries</p>
+     <div id="SearchedCountry" class="SearchedCountry">The Country Start With are</div>
+
+     <div class="btnDiv">
+
+        <button class="startwith" onclick="startWith()">STARTING WORD</button>
+        <button class="anyword" onclick="anyword()">SEARCH WITH ANY WORD</button>
+     </div>
+
+     <div class="inputDiv">
+
+        <input type="text" name="inputtext" class="inputtext" id="inputtext" onkeyup="startWith()">
+        <button id="search" class="search" onclick="search()"><i  class="fa-solid fa-magnifying-glass"></i></button>
+     </div>
+
+   </div>
+   <div class="bottomContainer" id="bottomContainer">
+
+
+   </div>
+
+  </div>
+
+</body>
+
+<script src="data.js"></script>
+<script src="index.js"></script>
+</html>
