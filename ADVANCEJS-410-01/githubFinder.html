@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Hub Finder</title>
+    <script defer src="index.js"></script>
+
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body
+        {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           
+
+        }
+       .mainContainer
+       {
+        width: 90vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+       }
+
+        .profileContainer{
+           width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            
+        }
+
+        .innerDiv{
+            display: flex;
+            align-items: center;
+            margin: 1rem;
+            width: 20%;
+        }
+
+        .innerDiv img{
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+        }
+
+        .innerDiv div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: .5rem;
+        }
+
+        .maindiv
+        {
+        width: 30%;
+        height: 10%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+        }
+        .maindiv button
+        {
+            width: 30%;
+            
+            color: black;
+            height: 70%;
+            border: transparent;
+            background: transparent;
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        .inputAndButton
+        {
+
+         width: 30%;
+         height: 8%; 
+         display: flex;
+         justify-content: center;
+         align-items: center;
+        }
+      .inputAndButton input
+      {
+        width: 80%;
+        height: 100%;
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+        padding-left: 10%;
+        font-weight: bold;
+      }
+      .inputAndButton button
+      {
+        width: 20%;
+        height: 100%;
+        background-color: black;
+        color: white;
+        padding: 20px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+        
+        <div class="header">
+            <h1>Github Finder</h1>
+        </div>
+   
+    
+        <div class="maindiv">
+            <h3>let's stalk Someone on Github</h3>
+            <button onclick="clearFunction()">clear</button>
+        </div>
+        <div class="inputAndButton">
+        <input id="searchBox" type="text">
+        <button id="searchButton" onclick="myfunction()">GO</button>
+        </div>
+        
+
+        <div class="profileContainer" id="profileContainer">
+
+        </div>
+
+    
+
+</div>
+</body>
+</html>
