@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+   <script defer src="weatherApp.js"></script>
+   <style>
+   *
+   {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   .mainContainer
+   {
+   width: 100vw;
+   height: 100vh;
+ 
+   display:  flex;
+   flex-direction: column;
+   justify-content: space-between;
+   align-items: center;
+   background-color: rgb(86, 153, 231);
+   }
+   .headingDiv
+   {
+    width: 70%;
+    height: 11%;
+    margin-top: 2%;
+    background-color: white;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   }
+   .headingPara
+   {
+    width: 90%;
+    height: 100%;
+    color: blue;
+    font-size: xxx-large;
+    font-weight: bolder;
+ 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+   }
+   .inputDiv
+   {
+    width: 30%;
+    height: 35%;
+    
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+   }
+
+   .cityName
+   {
+    width: 70%;
+    height: 25%;
+    padding: 1rem;
+    font-weight: bolder;
+    font-size: large;
+
+   }
+   .submitbtn
+   {
+    width: 30%;
+    height: 25%;
+    background-color: rgb(38, 93, 220);
+   border: transparent;
+   color: white;
+   font-weight: bolder;
+   font-size: large;
+    
+   }
+
+
+   .resultDiv
+   {
+    width: 30%;
+    height: 40%;
+   
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start ;
+    align-items: center;
+   }
+
+   .para1
+   {
+    width: 100%;
+    height: 20%;
+    background-color: rgb(38, 93, 220);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .para2, .para3, .para4
+   {
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font: grey;
+    font-size: larger;
+    font-weight: bold;
+
+   }
+   
+   </style>
+</head>
+<body>
+    <div class="mainContainer">
+
+     <div class="headingDiv">
+
+        <p class="headingPara">Weather App Using JavaScript </p>
+     </div>
+     
+     
+     
+     <div class="inputDiv">
+
+     <input type="text" name="cityName" id="cityName" class="cityName" placeholder="Please Enter Your City">
+     <button class="submitbtn" onclick="showWeather()">Submit</button>
+
+     </div>
+     <div class="resultDiv">
+
+      <p class="para1" id="para1"></p>
+      <p class="para2" id="para2"> </p>
+      <p class="para3" id="para3"></p>
+      <p class="para4" id="para4"> </p>
+      
+
+
+     </div>
+    
+
+    </div>
+    
+</body>
+</html>
