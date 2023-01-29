@@ -1,0 +1,315 @@
+
+  *
+  {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  a
+  {
+    text-decoration: none;
+    color: white;
+  }
+
+  body
+  {
+    margin: 0;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+    color: white;
+  }
+  .mainContainer
+  {
+  width: 100vw;
+ 
+  background-image: linear-gradient(90deg,#1e1e32,#38496e 75%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  }
+
+  .navBar
+  {
+   width: 95%;
+   height: 8%;
+   margin-top: .5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 4rem;
+  }
+
+  .brandName
+  {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+    color: white;
+  }
+  .navBarButtonDiv
+  { width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .navBarButtonDiv ul
+  { width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+.navBarButtonDiv ul li
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(156,159,164);
+}
+.navBarButtonDiv ul li a:hover
+{
+    color: white;
+}
+ .nav_anchor
+{
+   
+    text-decoration: none;
+    color: rgb(156,159,164);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 400;  
+    font-size: 1.1rem;
+}
+
+.tendingSection
+{
+   width: 92%;
+   height: 90px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+
+}
+.trendingTop
+{
+    width: 30%;
+    height: 70%;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.trendingTop select
+{
+  height: 70%;
+  width: 30%;
+  font-size: 16px;
+  background-color: #eaedff;
+
+}
+.btngroup
+{
+    width: 40%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.btngroup button
+{
+    height: 100%;
+    width: 50%;
+    outline: none;
+    border: none;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   background-color: rgb(59,65,91);
+   color: white;
+}
+.moviebtn
+{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.seriesbtn
+{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    
+}
+.btngroup .buttonselect
+{
+    background-color:#eaedff ;
+    color:rgb(59,65,91) ;
+
+}
+
+.trendingBottom
+{
+    width: 100%;
+    height: 30%;
+}
+.line
+{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(156,159,164);
+}
+.movie-grid
+{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.movie-grid>div {
+    margin: 25px 30px;
+}
+
+.movie-card
+{
+    width: 15%;
+   
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+   
+   
+}
+
+.movie-card-poster
+{
+    width: 164px;
+    height: 231px;
+   
+}
+.movie-card-poster img
+{
+    width: 164px;
+    height: 231px;
+
+}
+.movie-card:hover
+{
+    transform: scale(1.1);
+    transition:  .35s
+  
+}
+.movie-card-info
+{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    margin-left: 0.5rem;
+    /* border: 2px solid red; */
+}
+.movie-card-title
+{
+    font-weight: bold;
+    font-size: 14px;
+}
+.movie-card-geners
+{
+    font-size: 11px;
+    color: rgb(146, 151, 175);
+}
+.movie-card-release
+{
+    font-weight: bold;
+    color: rgb(146, 151, 175);
+}
+
+
+@media only screen and (max-width: 600px) {
+  body
+ {
+    width: 400px;
+ }
+    .mainContainer
+    {
+        width: 400px;
+        box-sizing: border-box;
+    }
+
+    .navBar
+    { 
+        width: 400px;
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .navBar  .brandName
+    {  width: 40%;
+        font-size: 20px;
+        display: inline-block;
+        padding-left: 20px;
+    }
+    .navBar .navBarButtonDiv
+    {
+        width: 30%;
+    }
+
+    .tendingSection
+    {
+    width: 400px;
+    
+    display: flex;
+    justify-content: space-between;
+    
+    }
+    .trendingTop
+    {
+        width: 350px;
+    }
+    .trendingTop .popular
+    {
+        width: 80px;
+        padding-left: 20px;
+    }
+    .trendingTop .trendingtype
+    {
+        width: 80px;
+    }
+    .trendingTop .btngroup
+    {
+        width: 100px;
+    }
+
+    .movie-grid
+    {
+        width: 300px;
+    }
+    .movie-card
+    {
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .movie-card .movie-card-info
+    {
+        width: 170px;
+    }
+    
+}
+
+ 

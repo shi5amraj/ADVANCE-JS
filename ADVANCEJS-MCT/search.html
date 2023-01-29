@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search Website</title>
+
+    <script  defer src="./search.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+        </style>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  
+ <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <div class="mainContainer">
+
+  <div class="navBar">
+    <p class="brandName"> <a href="/ADVANCEJS-MCT/movieSearch.html">The Movie Search</a> </p>
+    <div class="navBarButtonDiv">
+     <ul>
+      <li class="list-item">  <a class="nav_anchor" href="/ADVANCEJS-MCT/movieSearch.html">Home</a></li>
+      <li class="list-item">  <a class="nav_anchor"  href="/ADVANCEJS-MCT/search.html">Search</a></li>
+     </ul>
+    </div>
+  </div>
+
+  <div class="tendingSection">
+<div class="trendingTop">
+    <div class="selectDiv">
+        <select name="trendingtype" id="trendingtype">
+            <option value="movie">Movie</option>
+            <option value="tv">Series</option>
+        </select>
+    </div>
+    
+    <div class="inputText">
+     <input type="text" name="" id="textinput" class="textinput" placeholder="Search by title">
+
+    </div>
+    <div class="searchbtndiv">
+    <button class="searchbtn" id="searchbtn" onclick="searchMovie()"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+</div>
+<div class="trendingBottom">
+    <div class="line"></div>
+</div>
+
+
+
+</div>
+
+<div class="movie-grid" id="movie-grid">
+<!-- <div class="movie-card">
+<a href="">
+    <div class="movie-card-poster">
+        <img src="./gU4mmINWUF294Wzi8mqRvi6peMe.jpg" alt="" id="poster-img-id">
+    </div>
+</a>
+<div class="movie-card-info">
+    <div class="movie-card-title" id="movie-card-title">Navik</div>
+    <div class="movie-card-geners" id="movie-card-geners">War | DramaHistory |Action</div>
+    <div class="movie-card-release" id="movie-card-release">2022</div>
+</div>
+
+</div> -->
+
+
+</div>
+
+
+
+    </div>
+</body>
+</html>
