@@ -62,8 +62,15 @@ data.results.map((elem)=>
     movieCardGener.innerText += `${generArr[element]} | `
   })
 
-
+if(selectedValue==="movie")
+{
   movieCardRelease.innerText=elem.release_date.slice(0,4)
+}
+if(selectedValue==="tv")
+{
+  movieCardRelease.innerText=elem.first_air_date.slice(0,4)
+}
+ 
 
   movieCardInfo.appendChild(movieCardTitle)
   movieCardInfo.appendChild(movieCardGener)

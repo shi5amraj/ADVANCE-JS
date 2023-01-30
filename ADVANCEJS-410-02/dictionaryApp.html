@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary App</title>
+
+    <style>
+
+        *
+        {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .mainContainer
+        {
+
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="mainContainer">
+
+        <div class="heading"><h1>Dictionary</h1></div>
+
+        <p class="aboutDictionary">Find any word exist in the world</p>
+         <div class="inputDiv">
+            <input type="text" name="txtinput" class="txtinput" id="txtinput">
+            <button class="btn" id="btn" onclick="searchWord()"></button>
+         </div>
+         <p class="aboutWord" id="aboutWord"></p>
+
+         <audio src=""></audio>
+
+    </div>
+    
+</body>
+</html>
