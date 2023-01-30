@@ -62,12 +62,12 @@ data.results.map((elem)=>
     movieCardGener.innerText += `${generArr[element]} | `
   })
 
-if(selectedValue==="movie")
-{
+if(selectedValue=="movie")
+{ console.log("in movie")
   movieCardRelease.innerText=elem.release_date.slice(0,4)
 }
-if(selectedValue==="tv")
-{
+if(selectedValue=="tv")
+{  console.log("in tv")
   movieCardRelease.innerText=elem.first_air_date.slice(0,4)
 }
  
