@@ -17,6 +17,24 @@ async function fetchGener()
 }
 
 
+var generArrForTv=[]
+fetchGenerForTv()
+async function fetchGenerForTv()
+{
+
+    const respo=await fetch("https://api.themoviedb.org/3/genre/tv/list?api_key=d978465db7c89aabf9f34f9fbee1c652")
+    const data=await respo.json()
+   
+    data.genres.map((elem)=>
+    {
+        
+        //console.log(elem)  
+        generArrForTv[elem.id]=elem.name
+
+    })
+}
+
+
 async function searchMovie()
 {
     movieGrid.innerHTML=""
@@ -28,7 +46,7 @@ const selectedDay=document.getElementById("trendingtype")
  const resp= await fetch(`https://api.themoviedb.org/3/search/${selectedValue}?query=${textinput}&page=1&include_adult=false&language=en-US&api_key=d978465db7c89aabf9f34f9fbee1c652`)
  
 const data= await resp.json()
-
+console.log(data.results)
 data.results.map((elem)=>
   {
 
@@ -56,18 +74,27 @@ data.results.map((elem)=>
   const movieCardRelease=document.createElement("div")
   movieCardRelease.classList.add("movie-card-release")
 
-  movieCardTitle.innerText=elem.title
+ 
+  
+
+if(selectedValue=="movie")
+{ 
   elem.genre_ids.map((element)=>
   {
     movieCardGener.innerText += `${generArr[element]} | `
   })
-
-if(selectedValue=="movie")
-{ console.log("in movie")
+  
+  movieCardTitle.innerText=elem.title
   movieCardRelease.innerText=elem.release_date.slice(0,4)
 }
 if(selectedValue=="tv")
-{  console.log("in tv")
+{ 
+  elem.genre_ids.map((element)=>
+  {
+    movieCardGener.innerText += `${generArrForTv[element]} | `
+  })
+  movieCardTitle.innerText=elem.original_name
+
   movieCardRelease.innerText=elem.first_air_date.slice(0,4)
 }
  
