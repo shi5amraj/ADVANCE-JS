@@ -10,7 +10,7 @@ async function fetchGener()
     data.genres.map((elem)=>
     {
         
-        //console.log(elem)  
+        // console.log(elem)  
         generArr[elem.id]=elem.name
 
     })
