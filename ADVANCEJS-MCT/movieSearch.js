@@ -60,8 +60,8 @@ async function fetchGenerForTv()
     data.genres.map((elem)=>
     {
         
-        //console.log(elem)  
-        generArrForTv[elem.id]=elem.name
+        // console.log(elem)  
+        generArrForTv[elem.id]=elem.name 
 
     })
 }
@@ -75,13 +75,16 @@ async function showMovie()
     movieGrid.innerHTML=""
   const resp= await fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=d978465db7c89aabf9f34f9fbee1c652")
   const data= await resp.json()
+ 
+
 
   data.results.map((elem)=>
   {
 
-  //console.log(elem)
+  if(elem.elem.release_date>2023-01-01)
+  {
 
-  const movieCard=document.createElement("div")
+const movieCard=document.createElement("div")
   movieCard.classList.add("movie-card")
   const anchorTag= document.createElement("a")
   const movieCardPoster=document.createElement("div")
@@ -119,6 +122,9 @@ async function showMovie()
   movieCard.appendChild(movieCardInfo)
   movieGrid.appendChild(movieCard)
 
+  }
+
+  
 
   })
 
